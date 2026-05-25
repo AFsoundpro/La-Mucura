@@ -39,7 +39,7 @@ const Navbar = () => {
       transition: 'var(--transition)'
     }}>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src="/logo.svg" alt="La Múcura Logo" style={{ height: scrolled ? '45px' : '55px', width: 'auto', filter: 'brightness(0) invert(1)', transition: 'var(--transition)' }} />
+        <img src="/logo.svg" alt="La Múcura Logo" style={{ height: scrolled ? '45px' : '55px', width: 'auto', transition: 'var(--transition)' }} />
       </div>
 
       {/* Desktop Menu */}

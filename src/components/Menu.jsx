@@ -3,9 +3,9 @@ import { BookOpen } from 'lucide-react';
 
 const Menu = ({ onShowPdf }) => {
   const dishes = [
-    { name: "Asado de la Casa", price: "$45.000", desc: "Corte premium cocinado a fuego lento por 12 horas.", img: "/1.jpeg" },
-    { name: "Cazuela Múcura", price: "$38.000", desc: "Mezcla de granos y carnes en vasija de barro tradicional.", img: "/ajiaco.jpeg" },
-    { name: "Trucha al Ajillo", price: "$35.000", desc: "Fresca de la región con finas hierbas del huerto.", img: "/3food.jpeg" }
+    { name: "Menu Ejecutivo", price: "$24.000", desc: "Disfruta nuestro menu ejecutivo entre semana y el delicioso sabor de la comida tipica Colombiana.", img: "/1.jpeg" },
+    { name: "Ajiaco De la Mucura", price: "$38.000", desc: "Disfruta el tipico ajiaco santafereño y su auténtico sabor.", img: "/ajiaco.jpeg" },
+    { name: "Picada la Mucura", price: "$35.000", desc: "Fresca de la región con finas carnes y todo el sabor Colombiano para que disfrutes con tu familia.", img: "/3food.jpeg" }
   ];
 
   return (
@@ -16,7 +16,7 @@ const Menu = ({ onShowPdf }) => {
       </p>
       
       <div style={{ marginBottom: '60px' }}>
-        <button onClick={onShowPdf} className="btn" style={{ background: 'transparent', border: '2px solid var(--yellow)', color: 'var(--yellow)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', margin: '0 auto' }}>
+        <button onClick={onShowPdf} className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '0 auto' }}>
           <BookOpen size={20} /> VER CARTA COMPLETA
         </button>
       </div>

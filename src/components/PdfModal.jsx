@@ -37,7 +37,23 @@ const PdfModal = ({ isOpen, onClose }) => {
           alignItems: 'center'
         }}>
           <h3 style={{ color: '#000', margin: 0, fontSize: '1.5rem' }}>CARTA LA MÚCURA</h3>
-          <button onClick={onClose} style={{ background: '#000', border: 'none', color: 'var(--yellow)', fontSize: '1.5rem', cursor: 'pointer', width: '35px', height: '35px', borderRadius: '50%', fontWeight: 'bold' }}>×</button>
+          <button 
+            onClick={onClose} 
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#000'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = '#000'; e.currentTarget.style.color = 'var(--yellow)'; }}
+            style={{ 
+              background: '#000', 
+              border: 'none', 
+              color: 'var(--yellow)', 
+              fontSize: '1.5rem', 
+              cursor: 'pointer', 
+              width: '35px', 
+              height: '35px', 
+              borderRadius: '50%', 
+              fontWeight: 'bold',
+              transition: 'var(--transition)'
+            }}
+          >×</button>
         </div>
         <div style={{ flex: 1, backgroundColor: '#111', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '10px' }}>
           <img src="/cartaMucura.jpg" alt="Carta La Múcura" style={{ maxWidth: '100%', height: 'auto', borderRadius: '5px' }} />
