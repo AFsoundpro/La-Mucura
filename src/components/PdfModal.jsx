@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PdfModal = ({ isOpen, onClose }) => {
+const PdfModal = ({ isOpen, onClose, pdfPath, title }) => {
   if (!isOpen) return null;
 
   return (
@@ -36,7 +36,7 @@ const PdfModal = ({ isOpen, onClose }) => {
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
-          <h3 style={{ color: '#000', margin: 0, fontSize: '1.5rem' }}>CARTA LA MÚCURA</h3>
+          <h3 style={{ color: '#000', margin: 0, fontSize: '1.5rem' }}>{title || 'CARTA LA MÚCURA'}</h3>
           <button 
             onClick={onClose} 
             onMouseEnter={(e) => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#000'; }}
@@ -55,8 +55,32 @@ const PdfModal = ({ isOpen, onClose }) => {
             }}
           >×</button>
         </div>
-        <div style={{ flex: 1, backgroundColor: '#111', overflowY: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '10px' }}>
-          <img src="/cartaMucura.jpg" alt="Carta La Múcura" style={{ maxWidth: '100%', height: 'auto', borderRadius: '5px' }} />
+        <div style={{ flex: 1, backgroundColor: '#111', padding: '0px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+          <iframe 
+            src={`${pdfPath}?v=1`} 
+            title={title} 
+            style={{ width: '100%', flex: 1, border: 'none' }}
+          />
+          <div style={{ 
+            padding: '10px', 
+            textAlign: 'center', 
+            background: '#222', 
+            borderTop: '1px solid #333' 
+          }}>
+            <a 
+              href={pdfPath} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ 
+                color: 'var(--yellow)', 
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: 'bold'
+              }}
+            >
+              ¿No puedes ver el PDF? Haz clic aquí para abrirlo o descargarlo
+            </a>
+          </div>
         </div>
       </div>
     </div>

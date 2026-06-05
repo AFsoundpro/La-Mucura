@@ -2,11 +2,15 @@ import React from 'react';
 
 const Parking = () => (
   <section id="parqueo" style={{ background: 'rgba(255,255,255,0.02)' }}>
-    <h2 style={{ fontSize: '4rem', marginBottom: '20px' }}>LOGÍSTICA DE <span className="gold-text">PARQUEO</span></h2>
-    <p style={{ color: '#ccc', marginBottom: '60px', maxWidth: '600px', margin: '0 auto 60px auto', textAlign: 'center' }}>
+    <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '20px' }}>LOGÍSTICA DE <span className="gold-text">PARQUEO</span></h2>
+    <p style={{ color: '#ccc', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto', textAlign: 'center' }}>
       Llega sin preocupaciones. Contamos con convenios en parqueaderos a pocos pasos del restaurante.
     </p>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
+    <div style={{ 
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', 
+      gap: '30px' 
+    }}>
       <div className="glass-card" style={{ overflow: 'hidden' }}>
         <div style={{ padding: '20px', background: 'var(--yellow)', color: '#000', textAlign: 'center' }}>
           <h3 style={{ margin: 0 }}>PARQUEADERO TRADICIÓN</h3>

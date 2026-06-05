@@ -34,7 +34,8 @@ const Navbar = () => {
       borderBottom: scrolled ? '2px solid var(--yellow)' : '1px solid rgba(245, 196, 0, 0.2)',
       position: 'fixed',
       top: 0,
-      width: '100%',
+      left: 'var(--border-size, 15px)',
+      width: 'calc(100% - (var(--border-size, 15px) * 2))',
       zIndex: 1000,
       transition: 'var(--transition)'
     }}>

@@ -1,16 +1,21 @@
 import React from 'react';
 
 const About = () => (
-  <section id="nosotros" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '80px', alignItems: 'center' }}>
+  <section id="nosotros" style={{ 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', 
+    gap: '40px', 
+    alignItems: 'center' 
+  }}>
     <div style={{ position: 'relative' }}>
       <img 
-        src="/fachada.jpeg" 
+        src="/fachadamu.png" 
         alt="La Múcura" 
-        style={{ width: '100%', borderRadius: '20px', border: '4px solid var(--yellow)', boxShadow: '0 0 30px rgba(245,196,0,0.2)' }}
+        style={{ width: '100%', borderRadius: '12px', border: '7.5px solid var(--yellow)', boxShadow: '0 0 30px rgba(245,196,0,0.2)' }}
       />
     </div>
     <div>
-      <h2 style={{ fontSize: '4rem', textAlign: 'left', marginBottom: '20px' }}>NUESTRA <span className="gold-text">ESENCIA</span></h2>
+      <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', textAlign: 'left', marginBottom: '20px' }}>NUESTRA <span className="gold-text">ESENCIA</span></h2>
       <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '20px', color: '#ddd' }}>
         Nacimos con el deseo de preservar las recetas de la abuela, dándoles un toque contemporáneo sin perder el alma. 
       </p>

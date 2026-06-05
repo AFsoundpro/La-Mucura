@@ -3,6 +3,7 @@
 :root {
   --yellow: #f5c400;
   --yellow-strong: #ffcc00;
+  --red: #e31b23;
   --dark: #0a0a0a;
   --dark-accent: #161616;
   --wood: #1a120d;
@@ -32,12 +33,14 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, .bebas {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: var(--red);
 }
 
 section {
@@ -110,7 +113,7 @@ section {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(245, 196, 0, 0.2);
-  border-radius: 20px;
+  border-radius: 12px;
   transition: var(--transition);
 }
 
@@ -141,8 +144,12 @@ section {
   transform: scale(1.2);
 }
 
-/* Responsive Queries */
+/* Global Responsive Adjustments */
 @media (max-width: 900px) {
+  :root {
+    --border-size: 8px; /* Reducimos el borde en tablets */
+  }
+
   .desktop-menu {
     display: none !important;
   }
@@ -152,26 +159,43 @@ section {
   }
 
   h1 {
-    font-size: 4rem !important;
+    font-size: 3.5rem !important;
   }
 
   h2 {
-    font-size: 3rem !important;
+    font-size: 2.8rem !important;
     text-align: center !important;
   }
   
   section {
-    padding: 80px 5%;
+    padding: 60px 5%;
   }
 }
 
 @media (max-width: 600px) {
-  h1 {
-    font-size: 3rem !important;
+  :root {
+    --border-size: 5px; /* Borde mínimo en móviles */
   }
-  
-  .btn {
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .btn, .btn-outline {
     width: 100%;
     text-align: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 15px;
   }
 }
+
+/* Aplicar la variable de borde dinámico si se desea, 
+   o ajustar el App.jsx para usar esta lógica */

@@ -14,20 +14,43 @@ import WhatsAppButton from './components/WhatsAppButton';
 import PdfModal from './components/PdfModal';
 
 function App() {
-  const [isPdfOpen, setIsPdfOpen] = useState(false);
+  const [modalConfig, setModalConfig] = useState({ isOpen: false, pdfPath: '', title: '' });
+
+  const openModal = (pdfPath, title) => {
+    setModalConfig({ isOpen: true, pdfPath, title });
+  };
+
+  const closeModal = () => {
+    setModalConfig({ ...modalConfig, isOpen: false });
+  };
 
   return (
     <div>
       <Navbar />
-      <Hero />
-      <About />
-      <Menu onShowPdf={() => setIsPdfOpen(true)} />
-      <Events />
-      <Location />
-      <Parking />
-      <Footer />
+      <div className="main-frame" style={{ 
+        border: 'var(--border-size, 15px) solid var(--yellow)', 
+        borderTop: 'none', 
+        minHeight: '100vh',
+        marginTop: '0' 
+      }}>
+        <Hero />
+        <About />
+        <Menu 
+          onShowMenu={() => openModal('/menu.pdf', 'CARTA COMPLETA')} 
+          onShowPhotos={() => openModal('/fotos.pdf', 'GALERÍA DE PLATOS')}
+        />
+        <Events />
+        <Location />
+        <Parking />
+        <Footer />
+      </div>
       <WhatsAppButton />
-      <PdfModal isOpen={isPdfOpen} onClose={() => setIsPdfOpen(false)} />
+      <PdfModal 
+        isOpen={modalConfig.isOpen} 
+        onClose={closeModal} 
+        pdfPath={modalConfig.pdfPath} 
+        title={modalConfig.title} 
+      />
     </div>
   );
 }

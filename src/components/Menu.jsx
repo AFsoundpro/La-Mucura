@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
 
-const Menu = ({ onShowPdf }) => {
+const Menu = ({ onShowMenu, onShowPhotos }) => {
   const dishes = [
     { name: "Menu Ejecutivo", price: "$24.000", desc: "Disfruta nuestro menu ejecutivo entre semana y el delicioso sabor de la comida tipica Colombiana.", img: "/1.jpeg" },
     { name: "Ajiaco De la Mucura", price: "$38.000", desc: "Disfruta el tipico ajiaco santafereño y su auténtico sabor.", img: "/ajiaco.jpeg" },
@@ -10,21 +10,46 @@ const Menu = ({ onShowPdf }) => {
 
   return (
     <section id="menu" style={{ textAlign: 'center' }}>
-      <h2 style={{ fontSize: '5rem', marginBottom: '20px' }}>PLATOS <span className="gold-text">DESTACADOS</span></h2>
-      <p style={{ color: '#ccc', marginBottom: '50px', maxWidth: '600px', margin: '0 auto 50px auto' }}>
+      <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', marginBottom: '20px' }}>PLATOS <span className="gold-text">DESTACADOS</span></h2>
+      <p style={{ color: '#ccc', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto' }}>
         Una selección de nuestros platos más emblemáticos. Para ver todas nuestras opciones, abre nuestra carta completa.
       </p>
-      
-      <div style={{ marginBottom: '60px' }}>
-        <button onClick={onShowPdf} className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '0 auto' }}>
+
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '15px', 
+        flexWrap: 'wrap',
+        marginBottom: '50px' 
+      }}>
+        <button onClick={onShowMenu} className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <BookOpen size={20} /> VER CARTA COMPLETA
+        </button>
+        <button onClick={onShowPhotos} className="btn" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          VER GALERÍA DE PLATOS
         </button>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', 
+        gap: '30px' 
+      }}>
         {dishes.map((dish, i) => (
-          <div key={i} className="glass-card" style={{ overflow: 'hidden' }}>
-            <img src={dish.img} alt={dish.name} style={{ width: '100%', height: '250px', objectFit: 'cover', borderBottom: '2px solid var(--yellow)' }} />
+          <div key={i} className="glass-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <img 
+              src={dish.img} 
+              alt={dish.name} 
+              style={{ 
+                width: '100%', 
+                height: 'auto',
+                aspectRatio: '4/5', 
+                objectFit: 'contain', 
+                border: '7.5px solid var(--yellow)',
+                borderRadius: '12px',
+                background: 'rgba(0,0,0,0.2)'
+              }} 
+            />
             <div style={{ padding: '30px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '2rem', marginBottom: '10px' }}>{dish.name}</h3>
               <p style={{ color: '#aaa', fontSize: '0.9rem', marginBottom: '20px' }}>{dish.desc}</p>
