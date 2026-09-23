@@ -4,8 +4,8 @@ import { BookOpen } from 'lucide-react';
 const Menu = ({ onShowMenu, onShowPhotos }) => {
   const dishes = [
     { name: "Menu Ejecutivo", price: "$24.000", desc: "Disfruta nuestro menu ejecutivo entre semana y el delicioso sabor de la comida tipica Colombiana.", img: "/1.jpeg" },
-    { name: "Ajiaco De la Mucura", price: "$38.000", desc: "Disfruta el tipico ajiaco santafereño y su auténtico sabor.", img: "/ajiaco.jpeg" },
-    { name: "Picada la Mucura", price: "$35.000", desc: "Fresca de la región con finas carnes y todo el sabor Colombiano para que disfrutes con tu familia.", img: "/3food.jpeg" }
+    { name: "Ajiaco De la Mucura", price: "$25.000", desc: "Disfruta el tipico ajiaco santafereño y su auténtico sabor.", img: "/ajiaco.jpeg" },
+    { name: "Picada mixta de 3 carnes de la mucura", price: "$48.000", desc: "Fresca de la región con finas carnes y todo el sabor Colombiano para que disfrutes con tu familia.", img: "/3food.jpeg" }
   ];
 
   return (
